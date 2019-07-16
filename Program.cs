@@ -10,22 +10,19 @@ namespace BigO_Algorithm
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(pairSumSequence(3));
-        }
-        static int pairSumSequence(int n)
-        {
-            int sum = 0;
-            for(int i = 0; i < n; i++)
-            {
-                sum += pairSum(i, i + 1);
-            }
-            return sum;
+            Console.WriteLine(Sum(4));
         }
 
-        public static int pairSum(int a, int b)
+        static int Sum(int n)
         {
-            return a + b;
+            if(n <= 0)
+            {
+                return 0;
+            }
+            return n + Sum(n - 1);
         }
-       
     }
+
+
+
 }
