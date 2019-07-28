@@ -10,18 +10,24 @@ namespace BigO_Algorithm
     {
         static void Main(string[] args)
         {
-            foo(3,4);
+            int[] a = { 1, 2, 3, 4, 5 };
+            int[] b = { 6, 7 };
+            printUnorderedPairs(a,b);
         }
 
-        static void foo(params int[] array)
+        static void printUnorderedPairs(int[] arrayA, params int[] arrayB)
         {
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < arrayA.Length; i++)
             {
-                for (int j = 0; j < array.Length; j++)
+                for (int j = 0; j < arrayB.Length; j++)
                 {
-                    Console.WriteLine(array[i] + " " + array[j]);
+                    if (arrayA[i] < arrayB[j])
+                    {
+                        Console.WriteLine(arrayA[i] + " " + arrayB[j]);
+                    }
                 }
             }
+            Console.ReadLine();
         }
     }
 
