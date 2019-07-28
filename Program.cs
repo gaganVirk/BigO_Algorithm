@@ -10,16 +10,24 @@ namespace BigO_Algorithm
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Sum(4));
+            foo(3,4,5,6);
         }
 
-        static int Sum(int n)
+        static void foo(params int[] array)
         {
-            if(n <= 0)
+            int sum = 0;
+            int product = 1;
+
+            for(int i = 0; i < array.Length; i++)
             {
-                return 0;
+                sum += array[i];
             }
-            return n + Sum(n - 1);
+
+            for(int i = 0; i < array.Length; i++)
+            {
+                product *= array[i];
+            }
+            Console.WriteLine(sum + " " + product);
         }
     }
 
